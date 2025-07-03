@@ -8,14 +8,14 @@ This machine learning project focuses on classifying Cassia tora seeds into thre
 2. Grade B – Unprocessed seeds  
 3. Impurities – Foreign or unwanted materials
 
-The objective is to automate seed quality assessment using image classification techniques. The model is trained on a dataset of close to 3,000 labeled images.
+The objective is to automate seed quality assessment using image classification techniques. The model is trained on a dataset of nearly 3,000 labelled images.
 
 ## Dataset
 
 - Total images: ~3,000
 - Classes: Grade A, Grade B, Impurities
 - Image format: JPEG/PNG
-- Organized into class-based folders for training
+- Organised into class-based folders for training
 
 ## Tools and Technologies Used
 
@@ -42,5 +42,5 @@ The objective is to automate seed quality assessment using image classification 
 
 ## Objective
 
-To build a machine learning model that assists in sorting Cassia tora seeds efficiently by identifying high-quality seeds, lower-quality ones, and impurities — reducing manual sorting time and improving consistency.
+To develop an image-based classification model that helps identify high-quality (processed) and lower-quality (unprocessed) seeds and impurities, thereby reducing manual sorting effects and increasing processing efficiency.
 
