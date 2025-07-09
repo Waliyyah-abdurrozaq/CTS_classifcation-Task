@@ -1,29 +1,29 @@
 
 # Seed Image Classification Using Transfer Learning
 
-## 🧠 Project Overview
+## Project Overview
 
 This project focuses on building a deep learning model to classify images of seeds into three categories:
-- **Processed**
-- **Unprocessed**
+- **Processed_Grade A**
+- **Unprocessed_Grade B**
 - **Impurities**
 
 The classification was done using **Transfer Learning** with **EfficientNetB3** in TensorFlow. The goal was to leverage pre-trained knowledge from ImageNet to create a robust image classifier even with a relatively small custom dataset of ~2,000 images.
 
 ---
 
-## 📁 Dataset Description
+## Dataset Description
 
 The dataset consists of seed images divided into three folders (based on their classes). To train the model effectively, the dataset was **automatically split** into:
 - **Training set**
 - **Validation set**
 - **Test set**
 
-Each subset maintained the same class structure. The split ratio used was approximately 70% for training, 15% for validation, and 15% for testing.
+Each subset maintained the same class structure. The split ratio used was approximately 80% for training, 10% for validation, and 10% for testing.
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+##  Exploratory Data Analysis (EDA)
 
 Before modeling, an analysis of the dataset was done to:
 - Understand the distribution of images across the classes
@@ -34,7 +34,7 @@ This helped confirm that the dataset was relatively balanced and clean, making i
 
 ---
 
-## 🧼 Data Preprocessing
+## Data Preprocessing
 
 Data was preprocessed using the following techniques:
 - **Rescaling** image pixel values between 0 and 1
@@ -45,18 +45,18 @@ Separate preprocessing pipelines were applied for training, validation, and test
 
 ---
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 The model architecture was based on **EfficientNetB3**, a state-of-the-art convolutional neural network pre-trained on ImageNet. The steps included:
 - Loading the EfficientNetB3 model without its top layers
 - Adding a **custom classification head** with pooling, batch normalization, dropout, and dense layers
-- Setting the base model as **trainable**, to allow fine-tuning of the pretrained weights
+- Setting the base model as **untrainable**, to avoid fine-tuning of the pretrained weights
 
 This combination allows the model to adapt powerful learned features to the seed image dataset.
 
 ---
 
-## 🏋🏽‍♀️ Model Training
+## Model Training
 
 The model was compiled and trained using:
 - **Categorical cross-entropy loss**
@@ -68,7 +68,7 @@ Training was done for up to 20 epochs with real-time validation monitoring.
 
 ---
 
-## 📊 Model Evaluation
+## Model Evaluation
 
 After training, the model was evaluated on the **test dataset** to measure its performance on unseen data. Evaluation metrics included:
 - **Accuracy**
@@ -80,13 +80,13 @@ This step helped confirm that the model generalized well and could distinguish b
 
 ---
 
-## 🖼️ Visualizing Preprocessed Data
+## Visualising Preprocessed Data
 
 To better understand how the model "sees" data, preprocessed and augmented images were visualized before and after feeding into the model.
 
 ---
 
-## ✅ Key Takeaways
+## Key Takeaways
 - **Transfer learning** with EfficientNetB3 is effective for small image datasets.
 - Data augmentation significantly improves generalization.
 - Freezing and later unfreezing pretrained layers can be a great strategy to balance speed and accuracy.
